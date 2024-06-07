@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 Version=3.1.4
 
-BuildSourcePackage="github.com/davyxu/tabtoy/build"
-BinaryPackage="github.com/davyxu/tabtoy"
+BuildSourcePackage="github.com/shaunfong/tabtoy/build"
+BinaryPackage="github.com/shaunfong/tabtoy"
 BinaryName="tabtoy"
 
 BuildBinary()
