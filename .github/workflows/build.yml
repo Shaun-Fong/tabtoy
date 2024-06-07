@@ -22,7 +22,9 @@ jobs:
           go-version: '1.20'
 
       - name: Build
-        run: ./Make.sh
+        run: |
+          chmod +x ./Make.sh
+          ./Make.sh
         
       - name: Prepare files for upload
         run: |
