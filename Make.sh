@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-BuildSourcePackage="github.com/shaunfong/tabtoy/build"
-BinaryPackage="github.com/shaunfong/tabtoy"
+BuildSourcePackage="github.com/davyxu/tabtoy/build"
+BinaryPackage="github.com/davyxu/tabtoy"
 BinaryName="tabtoy"
 
 BuildBinary()
