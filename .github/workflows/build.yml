@@ -24,15 +24,7 @@ jobs:
       - name: Build
         run: |
           chmod +x ./Make.sh
-          ./Make.sh
-
-      - name: Print
-        run: |
-          ls
-        
-      - name: Prepare files for upload
-        run: |
-          chmod +x ./bin/*
+          ./Make.sh ${{ github.event.inputs.tag_name }}
           
       - name: Create Release
         id: create_release
@@ -49,7 +41,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          find bin -type f -name "*.gz" -print0 | while IFS= read -r -d '' file; do
+          find ./ -type f -name "*.gz" -print0 | while IFS= read -r -d '' file; do
             echo "Uploading $file..."
-            gh bin upload ${{ github.event.inputs.tag_name }} "$file"
+            gh ./ upload ${{ github.event.inputs.tag_name }} "$file"
           done
