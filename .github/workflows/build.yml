@@ -28,11 +28,11 @@ jobs:
 
       - name: Print
         run: |
-          ll
+          ls
           cd bin
-          ll
+          ls
           cd /bin
-          ll
+          ls
         
       - name: Prepare files for upload
         run: |
