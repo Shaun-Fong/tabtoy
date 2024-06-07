@@ -41,7 +41,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          find ./ -type f -name "*.gz" -print0 | while IFS= read -r -d '' file; do
+          find . -type f -name "*.gz" -print0 | while IFS= read -r -d '' file; do
             echo "Uploading $file..."
-            gh ./ upload ${{ github.event.inputs.tag_name }} "$file"
+            gh release upload ${{ github.event.inputs.tag_name }} "$file"
           done
