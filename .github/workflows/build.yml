@@ -25,10 +25,19 @@ jobs:
         run: |
           chmod +x ./Make.sh
           ./Make.sh
+
+      - name: Print
+        run: |
+          ll
+          cd bin
+          ll
+          cd /bin
+          ll
         
       - name: Prepare files for upload
         run: |
           mkdir -p release
+          chmod +x /bin/*
           mv /bin release/
           cd release
           ll
